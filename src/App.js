@@ -1,12 +1,16 @@
 import "./App.css";
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 
 function App() {
 
-  const [value, setValue] = useState();
+  const [value, setValue] = useState(  localStorage.getItem('value') || '');
 
-  function handleChange(e){
-    setValue(e.target.value)
+  useEffect(() => {
+    localStorage.setItem('value', value);
+  }, [value]);
+
+  function handleChange(event){
+    setValue(event.target.value)
   }
 
   function save() {
