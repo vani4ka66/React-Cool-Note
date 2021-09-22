@@ -9,15 +9,15 @@ function App() {
     setValue(e.target.value)
   }
 
-  function save(e) {
+  function save() {
     setValue(value)
-    window.localStorage.setItem('value', value)
+    localStorage.setItem('value', value)
     console.log(localStorage.getItem('value'))
   }
 
-  function reset(e) {
+  function reset() {
     setValue('')
-    window.localStorage.setItem('value', '')
+    localStorage.removeItem('value')
     console.log(localStorage.getItem('value'))
   }
 
