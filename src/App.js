@@ -7,7 +7,6 @@ function App() {
 
   function handleChange(e){
     setValue(e.target.value)
-    localStorage.setItem('value', value)
   }
 
   function save() {
@@ -18,7 +17,7 @@ function App() {
 
   function reset() {
     setValue('')
-    localStorage.removeItem('value')
+    // localStorage.removeItem('value')
     console.log(localStorage.getItem('value'))
   }
 
