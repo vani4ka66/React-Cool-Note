@@ -1,16 +1,33 @@
 import "./App.css";
+import React, {useState} from "react";
 
 function App() {
+
+  const [value, setValue] = useState('');
+
+  function save(e) {
+    setValue(value)
+    window.localStorage.setItem('value', value)
+    console.log(localStorage.getItem('value'))
+  }
+
+  function reset(e) {
+    setValue('')
+    window.localStorage.setItem('value', '')
+    console.log(localStorage.getItem('value'))
+  }
+
   return (
     <div className="App">
       <div className="box">
         <div className="field">
           <div className="control">
-            <textarea className="textarea is-large" placeholder="Notes..." />
+            <textarea className="textarea is-large" placeholder="Notes..." onChange={e => setValue(e.target.value)} />
           </div>
         </div>
-        <button className="button is-large is-primary is-active">Save</button>
-        <button className="button is-large">Clear</button>
+        <p>{value}</p>
+        <button className="button is-large is-primary is-active" onClick={save}>Save</button>
+        <button className="button is-large" onClick={reset}>Clear</button>
       </div>
     </div>
   );
