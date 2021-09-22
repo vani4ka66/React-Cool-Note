@@ -18,6 +18,7 @@ function App() {
   function reset() {
     setValue('')
     // localStorage.removeItem('value')
+    localStorage.clear();
     console.log(localStorage.getItem('value'))
   }
 
