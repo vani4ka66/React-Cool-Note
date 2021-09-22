@@ -7,6 +7,7 @@ function App() {
 
   function handleChange(e){
     setValue(e.target.value)
+    localStorage.setItem('value', value)
   }
 
   function save() {
