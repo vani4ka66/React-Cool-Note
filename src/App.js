@@ -5,6 +5,10 @@ function App() {
 
   const [value, setValue] = useState('');
 
+  function handleChange(e){
+    setValue(e.target.value)
+  }
+
   function save(e) {
     setValue(value)
     window.localStorage.setItem('value', value)
@@ -22,7 +26,7 @@ function App() {
       <div className="box">
         <div className="field">
           <div className="control">
-            <textarea className="textarea is-large" placeholder="Notes..." onChange={e => setValue(e.target.value)} />
+            <textarea className="textarea is-large" placeholder="Notes..." value={value} onChange={handleChange} />
           </div>
         </div>
         <p>{value}</p>
