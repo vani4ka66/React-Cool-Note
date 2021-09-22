@@ -3,7 +3,7 @@ import React, {useState} from "react";
 
 function App() {
 
-  const [value, setValue] = useState('');
+  const [value, setValue] = useState();
 
   function handleChange(e){
     setValue(e.target.value)
@@ -17,7 +17,6 @@ function App() {
 
   function reset() {
     setValue('')
-    // localStorage.removeItem('value')
     localStorage.clear();
     console.log(localStorage.getItem('value'))
   }
